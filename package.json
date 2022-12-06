@@ -1,0 +1,34 @@
+{
+  "name": "tood-service",
+  "version": "1.0.0",
+  "description": "See the Big Picture: Get Organized with Tood",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raibove/tood-service.git"
+  },
+  "keywords": [
+    "to-do",
+    "list",
+    "mongodb",
+    "hackathon"
+  ],
+  "author": "Shweta Kale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raibove/tood-service/issues"
+  },
+  "type": "module",
+  "homepage": "https://github.com/raibove/tood-service#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.0",
+    "nodemon": "^2.0.20"
+  }
+}
