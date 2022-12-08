@@ -50,7 +50,7 @@ const register = async (req, res, next) => {
   } catch (err) {
     console.log(err);
     const errors = handleErrors(err);
-    res.json({ errors, created: false });
+    res.status(401).json({ errors, created: false });
   }
 };
 
@@ -63,7 +63,7 @@ const login = async (req, res) => {
     res.status(200).json({ user: user._id, status: true });
   } catch (err) {
     const errors = handleErrors(err);
-    res.json({ errors, status: false });
+    res.status(401).json({ errors, status: false });
   }
 };
 
