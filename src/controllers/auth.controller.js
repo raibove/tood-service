@@ -45,7 +45,7 @@ const register = async (req, res, next) => {
       maxAge: maxAge * 1000,
     });
 
-    res.status(201).json({ user: user._id, created: true });
+    res.status(201).json({ user: user._id, created: true, token: token });
   } catch (err) {
     const errors = handleErrors(err);
     res.status(401).json({ errors, created: false });
@@ -63,7 +63,7 @@ const login = async (req, res) => {
       sameSite: "none",
       maxAge: maxAge * 1000,
     });
-    res.status(200).json({ user: user._id, status: true });
+    res.status(200).json({ user: user._id, status: true, token: token });
   } catch (err) {
     const errors = handleErrors(err);
     res.status(401).json({ errors, status: false });
