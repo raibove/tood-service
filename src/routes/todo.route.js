@@ -1,10 +1,11 @@
 import ToDoListSchema from "../models/todo.model.js";
 import express from "express";
+import checkUser from "../middlewares/auth.middleware.js";
 
 const router = express.Router();
 
 //Create a new item in the to do list
-router.post("/", async (req, res) => {
+router.post("/", checkUser, async (req, res) => {
   const todo = new ToDoListSchema({
     title: req.body.title,
     description: req.body.description,
@@ -19,7 +20,7 @@ router.post("/", async (req, res) => {
 });
 
 //Get all items in the to do list
-router.get("/", async (req, res) => {
+router.get("/", checkUser, async (req, res) => {
   try {
     const todos = await ToDoListSchema.find();
     res.json(todos);
