@@ -10,8 +10,6 @@ const createToken = (id) => {
 
 const handleErrors = (err) => {
   let errors = { email: "", password: "" };
-
-  console.log(err);
   if (err.message === "incorrect email") {
     errors.email = "That email is not registered";
   }
@@ -48,7 +46,6 @@ const register = async (req, res, next) => {
 
     res.status(201).json({ user: user._id, created: true });
   } catch (err) {
-    console.log(err);
     const errors = handleErrors(err);
     res.status(401).json({ errors, created: false });
   }

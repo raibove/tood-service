@@ -6,11 +6,11 @@ const checkUser = (req, res, next) => {
   if (token) {
     jwt.verify(token, "shweta super secret key", async (err, decodedToken) => {
       if (err) {
-        res.json({ status: false });
+        return res.status(401).json({ status: false });
         next();
       } else {
         const user = await User.findById(decodedToken.id);
-        if (user) res.json({ status: true, user: user.email });
+        if (user) res.user = user;
         else {
           return res.status(401).json({ status: false });
         }
