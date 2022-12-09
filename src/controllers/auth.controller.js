@@ -39,7 +39,7 @@ const register = async (req, res, next) => {
     const token = createToken(user._id);
 
     res.cookie("jwt", token, {
-      httpOnly: true,
+      // httpOnly: true,
       secure: true,
       sameSite: "none",
       maxAge: maxAge * 1000,
@@ -58,7 +58,7 @@ const login = async (req, res) => {
     const user = await User.login(email, password);
     const token = createToken(user._id);
     res.cookie("jwt", token, {
-      httpOnly: true,
+      // httpOnly: true,
       secure: true,
       sameSite: "none",
       maxAge: maxAge * 1000,
