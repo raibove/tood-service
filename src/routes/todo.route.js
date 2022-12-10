@@ -5,7 +5,7 @@ import checkUser from "../middlewares/auth.middleware.js";
 const router = express.Router();
 
 //Create a new item in the to do list
-router.post("/", checkUser, async (req, res) => {
+router.post("/", async (req, res) => {
   const todo = new ToDoListSchema({
     title: req.body.title,
     description: req.body.description,
