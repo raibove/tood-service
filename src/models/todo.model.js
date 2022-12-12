@@ -15,6 +15,18 @@ const ToDoListSchema = new mongoose.Schema({
   id: {
     type: Number,
   },
+  email: {
+    type: String,
+    required: true,
+  },
+  arc: {
+    type: Object,
+    required: true,
+  },
+  angle: {
+    type: Number,
+    required: true,
+  },
 });
 
 export default mongoose.model("Todo", ToDoListSchema);
